@@ -104,7 +104,7 @@ export const SubAdminSignUp = async (req, res) => {
         console.error("SubAdmin Signup Error:", error);
         return res.status(500).json({
             success: false,
-            message: "Server Error",
+            message: "Server Error", 
             error: error.message,
         });
     }
