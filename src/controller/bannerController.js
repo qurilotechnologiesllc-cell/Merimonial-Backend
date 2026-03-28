@@ -7,7 +7,7 @@ export const uploadBanner = async (req, res) => {
     const file = req.file;
     const user = req.user.role
 
-    if (user !== "admin") {
+    if (user !== "Admin") {
       return res.status(403).json({ success: false, message: "Unauthorized! Only Admin can add banners" })
     }
 
@@ -58,7 +58,7 @@ export const deleteBanner = async (req, res) => {
     const { id } = req.query;
     const user = req.user.role;
 
-    if (user !== "admin") {
+    if (user !== "Admin") {
       return res.status(403).json({ success: false, message: "Unauthorized! Only Admin can delete banners" })
     }
 
@@ -101,7 +101,7 @@ export const updateBanner = async (req, res) => {
     const user = req.user.role;
     const file = req.file;
 
-    if (user !== "admin") {
+    if (user !== "Admin") {
       return res.status(403).json({ success: false, message: "Unauthorized! Only Admin can update banners" })
     }
 
