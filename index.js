@@ -37,6 +37,10 @@ server.on('error', (err) => {
   console.error('❌ Server error:', err.message);
 });
 
+app.get("/", async(req, res)=>{
+  res.send("🚀 Server running on successfully!")
+})
+
 // 6) Start server
 server.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
