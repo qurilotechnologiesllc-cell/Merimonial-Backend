@@ -19,6 +19,8 @@ const io = new Server(server, {
     origin: process.env.CLIENT_URLS?.split(',') || [
       'http://localhost:3000',
       'http://localhost:3001',
+      "https://matrimonial-main.vercel.app",
+      "https://matro-main4444-main.vercel.app"
     ],
     methods: ['GET', 'POST', 'PUT', 'PATCH'],
     credentials: true,

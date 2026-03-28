@@ -33,6 +33,8 @@ app.use(cors({
         "https://6jnqmj85-3000.inc1.devtunnels.ms",
         "http://localhost:3000",
         "http://localhost:3001",
+        "https://matrimonial-main.vercel.app",
+        "https://matro-main4444-main.vercel.app"
     ],
     credentials: true
 }));
