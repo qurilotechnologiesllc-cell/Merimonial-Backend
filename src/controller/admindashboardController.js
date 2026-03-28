@@ -16,12 +16,13 @@ const direction = (change) => (change >= 0 ? "up" : "down");
 
 // TRUE PERCENT FUNCTION
 const percent = (current, previous) => {
-  if (previous === 0) return current > 0 ? 100 : 0;
+  if (previous === 0) return current > 0 ? null : 0; // null = "New"
   return Number((((current - previous) / previous) * 100).toFixed(1));
 };
 
 
 export const getStatsSummary = async (req, res) => {
+
   try {
     const now = moment().tz("Asia/Kolkata");
 
@@ -129,7 +130,6 @@ export const getStatsSummary = async (req, res) => {
         blockedUsers: { $exists: true, $ne: [] }
       }),
     ]);
-
 
     // ============ RESPONSE =============
     res.status(200).json({
