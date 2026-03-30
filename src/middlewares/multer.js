@@ -9,7 +9,7 @@ const storage = new CloudinaryStorage({
     const nameWithoutExt = path.parse(file.originalname).name;
 
     return {
-      folder: "chat-files",
+      folder: "metrimonial",
       resource_type: "auto",
       type: "upload",
       public_id: `${Date.now()}-${Math.round(Math.random() * 1e9)}-${nameWithoutExt}`,
