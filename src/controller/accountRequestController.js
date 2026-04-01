@@ -112,6 +112,7 @@ export const getSentRequests = async (req, res) => {
 
         return {
           requestId: req._id, // 🔥 request id
+          status:req.status,
           _id: user._id,
           name: `${user.firstName || ''} ${user.lastName || ''}`,
           age: user.dateOfBirth ? calculateAge(user.dateOfBirth) : null,
