@@ -15,8 +15,10 @@ const percentageChange = (current, previous) => {
 const direction = (change) => (change >= 0 ? "up" : "down");
 
 // TRUE PERCENT FUNCTION
+
+// AB — null ki jagah 0 return karega
 const percent = (current, previous) => {
-  if (previous === 0) return current > 0 ? null : 0; // null = "New"
+  if (previous === 0) return 0; // ✅ null hata diya
   return Number((((current - previous) / previous) * 100).toFixed(1));
 };
 
