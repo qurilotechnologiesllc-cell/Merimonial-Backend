@@ -166,6 +166,7 @@ export const SubAdminSignIn = async (req, res) => {
             success: true,
             message: "Login successful",
             token,
+            subAdminPermission: subAdmin.permissions
         });
 
     } catch (error) {
