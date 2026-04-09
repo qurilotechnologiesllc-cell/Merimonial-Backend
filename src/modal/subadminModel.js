@@ -57,11 +57,12 @@ const subAdminSchema = new mongoose.Schema(
             {
                 type: String,
                 enum: [
-                    "CAN_VIEW_USER",
-                    "EDIT_USER_INFO",
-                    "ACCESS_ANALYTICS",
-                    "MODERATE_REPORTS",
-                    "BLOCK_REPORTED_USERS",
+                    "DASHBOARD",
+                    "ANALYTICS",
+                    "MANAGE_USERS",
+                    "REPORTED_CONTENT",
+                    "VARIFICATION_REQUEST",
+                    "PROFILE_DETAILS",
                 ],
             },
         ],
