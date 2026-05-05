@@ -439,3 +439,79 @@ export const getNewlyRegisteredUsers = async (req, res) => {
     });
   }
 };
+
+export const getloginUserProfileDetails = async (req, res) => {
+  try {
+    const id = req.user.userId
+    const user = await RegisterModel.findById(id)
+
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    const profile = {
+      // Basic Info
+      profileFor: user.profileFor,
+      firstName: user.firstName,
+      middleName: user.middleName,
+      lastName: user.lastName,
+      dateOfBirth: user.dateOfBirth,
+      gender: user.gender,
+
+      // Marital Info
+      maritalStatus: user.maritalStatus,
+      numberOfChildren: user.numberOfChildren,
+      isChildrenLivingWithYou: user.isChildrenLivingWithYou,
+
+      // Religious Info
+      religion: user.religion,
+      willingToMarryOtherCaste: user.willingToMarryOtherCaste,
+      caste: user.caste,
+      community: user.community,
+      gotra: user.gotra,
+      motherTongue: user.motherTongue,
+
+      // Physical Info
+      height: user.height,
+      weight: user.weight,
+      complexion: user.complexion,
+      anyDisability: user.anyDisability,
+      diet: user.diet,
+
+      // Family Info
+      familyType: user.familyType,
+      familyStatus: user.familyStatus,
+
+      // Location
+      country: user.country,
+      state: user.state,
+      city: user.city,
+
+      // Education & Career
+      highestEducation: user.highestEducation,
+      employedIn: user.employedIn,
+      annualIncome: user.annualIncome,
+      workLocation: user.workLocation,
+      designation: user.designation,
+
+      // Extra Info
+      profileImage: user.profileImage,
+      vmId: user.vmId,
+      email: user.email,
+      mobile: user.mobile,
+      role: user.role,
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Profile details fetched successfully!",
+      data: profile,
+    })
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+      error: error.message,
+    })
+  }
+}
+

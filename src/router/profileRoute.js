@@ -1,5 +1,5 @@
 import express from 'express';
-import { getNewlyRegisteredUsers, getUserFormattedProfile, getUserPublicProfileById, getUsersWithProfileImage, updateProfileImagesOnly, updateUserFormattedProfile } from '../controller/profileController.js';
+import { getNewlyRegisteredUsers, getUserFormattedProfile, getUserPublicProfileById, getUsersWithProfileImage, updateProfileImagesOnly, updateUserFormattedProfile, getloginUserProfileDetails } from '../controller/profileController.js';
 import { authenticateUser } from '../middlewares/authMiddleware.js';
 import upload from '../middlewares/multer.js';
 
@@ -13,6 +13,7 @@ profileRouter.put('/update-profile-image', authenticateUser, upload.fields([
 ]), updateProfileImagesOnly);
 profileRouter.get('/with-photo', authenticateUser, getUsersWithProfileImage);
 profileRouter.get('/newly-user', authenticateUser, getNewlyRegisteredUsers);
+profileRouter.get('/login-profile-details', authenticateUser, getloginUserProfileDetails)
 
 
 export default profileRouter;

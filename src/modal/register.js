@@ -155,7 +155,6 @@ const registerSchema = new mongoose.Schema({
 // 🔥 INDEXES
 registerSchema.index({ firstName: 1 });
 registerSchema.index({ lastName: 1 });
-registerSchema.index({ vmId: 1 });
 registerSchema.index({ gender: 1 });
 registerSchema.index({ adminApprovel: 1 });
 
